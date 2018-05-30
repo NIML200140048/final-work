@@ -1,0 +1,12 @@
+entrypoint: gunicorn -b :$PORT untitled.wsgi
+env: flex
+runtime: python
+runtime_config:
+ python_version: 3
+handlers:
+- url: /static
+  static_dir: static
+- url: .*
+  script: untitled.wsgi.application
+- url: /css
+  script: static/css

@@ -25,7 +25,7 @@ SECRET_KEY = '&&nq8e!=*@fcz-3bcbpyh2ux1rqih#7q-dsk(^u#14l+(6^f1k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -120,7 +120,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
+#STATIC_URL = 'http://storage.googleapis.com/encouraging-art-200314.appspot.com/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
+#STATIC_ROOT = 'cloud-comp/static/'
 
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
